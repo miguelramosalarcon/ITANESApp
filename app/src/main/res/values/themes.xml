@@ -29,7 +29,7 @@
         <item name="colorError">@color/error</item>
 
         <!-- Tipografía global -->
-        <item name="android:fontFamily">@font/open_sans</item>
+
 
         <!-- StatusBar del mismo color que el primary -->
         <item name="android:statusBarColor">@color/green_primary</item>
@@ -40,29 +40,7 @@
     <!-- ESTILOS DE TEXTO                                             -->
     <!-- ============================================================ -->
 
-    <!-- Título grande — pantallas principales -->
-    <style name="TextStyle.Title" parent="TextAppearance.Material3.HeadlineMedium">
-        <item name="fontFamily">@font/montserrat_bold</item>
-        <item name="android:textColor">@color/text_primary</item>
-    </style>
 
-    <!-- Subtítulo — nombres de lugares -->
-    <style name="TextStyle.Subtitle" parent="TextAppearance.Material3.TitleMedium">
-        <item name="fontFamily">@font/montserrat_semibold</item>
-        <item name="android:textColor">@color/text_primary</item>
-    </style>
-
-    <!-- Cuerpo — descripciones -->
-    <style name="TextStyle.Body" parent="TextAppearance.Material3.BodyMedium">
-        <item name="fontFamily">@font/open_sans</item>
-        <item name="android:textColor">@color/text_secondary</item>
-    </style>
-
-    <!-- Label pequeño — duración, categoría -->
-    <style name="TextStyle.Label" parent="TextAppearance.Material3.LabelMedium">
-        <item name="fontFamily">@font/open_sans_semibold</item>
-        <item name="android:textColor">@color/text_secondary</item>
-    </style>
 
     <!-- ============================================================ -->
     <!-- ESTILOS DE BOTONES                                           -->

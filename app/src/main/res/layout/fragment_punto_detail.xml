@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:fontFamily="@font/open_sans"
+
             android:textColor="@color/text_on_primary"
             android:background="@color/shadow"
             android:paddingHorizontal="8dp"
@@ -102,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:fontFamily="@font/montserrat_bold"
+
                     android:textColor="@color/text_primary" />
 
                 <!-- Orden en el recorrido -->
@@ -111,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
-                    android:fontFamily="@font/open_sans_semibold"
+
                     android:textColor="@color/green_primary"
                     android:layout_marginTop="4dp" />
 
@@ -128,7 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:fontFamily="@font/open_sans"
+
                     android:textColor="@color/text_secondary"
                     android:lineSpacingMultiplier="1.5" />
 
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/punto_ver_ruta"
-                android:fontFamily="@font/open_sans_semibold"
+
                 style="@style/ButtonStyle.Primary"
                 android:layout_marginEnd="8dp" />
 
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/punto_compartir"
-                android:fontFamily="@font/open_sans_semibold"
+
                 style="@style/ButtonStyle.Secondary"
                 android:layout_marginStart="8dp" />
 
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/punto_anterior"
-                android:fontFamily="@font/open_sans_semibold"
+
                 style="@style/ButtonStyle.Secondary"
                 android:layout_marginEnd="8dp" />
 
@@ -211,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/punto_siguiente"
-                android:fontFamily="@font/open_sans_semibold"
+
                 style="@style/ButtonStyle.Primary"
                 android:layout_marginStart="8dp" />
 

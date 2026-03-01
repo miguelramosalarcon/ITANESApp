@@ -4,37 +4,110 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
+    <!-- ================================================ -->
+    <!-- HOME — Lista de recorridos                       -->
+    <!-- ================================================ -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.itanesapp.ui.home.HomeFragment"
-        android:label="Home" />
+        android:label="Recorridos">
 
+        <!-- Home → Detalle del recorrido -->
+        <action
+            android:id="@+id/action_home_to_recorrido"
+            app:destination="@id/recorridoDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- ================================================ -->
+    <!-- RECORRIDO DETAIL — 5 puntos del recorrido        -->
+    <!-- ================================================ -->
     <fragment
         android:id="@+id/recorridoDetailFragment"
         android:name="com.example.itanesapp.ui.recorrido.RecorridoDetailFragment"
         android:label="Recorrido">
+
         <argument
             android:name="recorridoId"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+        <!-- Recorrido → Detalle del punto -->
+        <action
+            android:id="@+id/action_recorrido_to_punto"
+            app:destination="@id/puntoDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
+    <!-- ================================================ -->
+    <!-- PUNTO DETAIL — Detalle del punto turístico       -->
+    <!-- ================================================ -->
     <fragment
         android:id="@+id/puntoDetailFragment"
         android:name="com.example.itanesapp.ui.punto.PuntoDetailFragment"
         android:label="Punto Turístico">
+
         <argument
             android:name="puntoId"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+        <argument
+            android:name="recorridoId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+        <!-- Punto → Ruta -->
+        <action
+            android:id="@+id/action_punto_to_ruta"
+            app:destination="@id/rutaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
+    <!-- ================================================ -->
+    <!-- RUTA — Mapa con ruta en auto                     -->
+    <!-- ================================================ -->
     <fragment
         android:id="@+id/rutaFragment"
         android:name="com.example.itanesapp.ui.ruta.RutaFragment"
-        android:label="Ruta" />
+        android:label="Ruta">
 
+        <argument
+            android:name="puntoId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+        <argument
+            android:name="recorridoId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <!-- ================================================ -->
+    <!-- FAVORITOS — Puntos guardados                     -->
+    <!-- ================================================ -->
     <fragment
         android:id="@+id/favoritosFragment"
         android:name="com.example.itanesapp.ui.favoritos.FavoritosFragment"
-        android:label="Favoritos" />
+        android:label="Favoritos">
+
+        <!-- Favoritos → Detalle del punto -->
+        <action
+            android:id="@+id/action_favoritos_to_punto"
+            app:destination="@id/puntoDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
 </navigation>

@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/favoritos_empty_title"
             android:textSize="18sp"
-            android:fontFamily="@font/montserrat_semibold"
+
             android:textColor="@color/text_primary"
             android:gravity="center" />
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:text="@string/favoritos_empty_subtitle"
             android:textSize="14sp"
-            android:fontFamily="@font/open_sans"
+
             android:textColor="@color/text_hint"
             android:gravity="center"
             android:layout_marginTop="8dp" />

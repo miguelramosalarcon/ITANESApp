@@ -17,7 +17,7 @@
         android:layout_height="40dp"
         android:gravity="center"
         android:textSize="16sp"
-        android:fontFamily="@font/montserrat_bold"
+
         android:textColor="@color/text_on_primary"
         android:background="@drawable/bg_circle_green"
         app:layout_constraintTop_toTopOf="parent"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:fontFamily="@font/montserrat_semibold"
+
             android:textColor="@color/text_primary"
             android:maxLines="2"
             android:ellipsize="end" />
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:fontFamily="@font/open_sans"
+
             android:textColor="@color/text_secondary"
             android:maxLines="2"
             android:ellipsize="end"

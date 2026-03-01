@@ -32,7 +32,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        android:fontFamily="@font/montserrat_bold"
+
         android:textColor="@color/text_on_primary"
         android:paddingHorizontal="16dp"
         android:paddingBottom="8dp"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="13sp"
-        android:fontFamily="@font/open_sans_semibold"
+
         android:textColor="@color/text_secondary"
         android:paddingHorizontal="16dp"
         android:paddingVertical="10dp"
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:text="@string/recorrido_puntos_title"
         android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
+
         android:textColor="@color/text_primary"
         android:paddingHorizontal="16dp"
         android:paddingBottom="8dp"
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="@string/recorrido_iniciar"
         android:textColor="@color/text_on_primary"
-        android:fontFamily="@font/open_sans_semibold"
+
         style="@style/ButtonStyle.Primary"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp"

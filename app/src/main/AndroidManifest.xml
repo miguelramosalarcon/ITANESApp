@@ -20,9 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ITANESApp">
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+
 
         <!-- SplashActivity — punto de entrada de la app -->
         <activity

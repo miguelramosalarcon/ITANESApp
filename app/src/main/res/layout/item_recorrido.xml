@@ -39,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:fontFamily="@font/montserrat_bold"
+
             android:textColor="@color/text_on_primary"
             android:paddingHorizontal="16dp"
             app:layout_constraintBottom_toTopOf="@id/tv_descripcion"
@@ -53,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="13sp"
-            android:fontFamily="@font/open_sans"
+
             android:textColor="@color/text_on_primary"
             android:alpha="0.85"
             android:maxLines="2"
@@ -85,7 +85,7 @@
                 android:layout_weight="1"
                 android:drawablePadding="4dp"
                 android:textSize="13sp"
-                android:fontFamily="@font/open_sans_semibold"
+
                 android:textColor="@color/text_secondary" />
 
             <!-- Ícono duración -->
@@ -96,7 +96,7 @@
                 android:layout_weight="1"
                 android:drawablePadding="4dp"
                 android:textSize="13sp"
-                android:fontFamily="@font/open_sans_semibold"
+
                 android:textColor="@color/text_secondary"
                 android:gravity="end" />
 

@@ -128,7 +128,7 @@ public abstract class ITANESDatabase extends RoomDatabase {
         RecorridoEntity r1 = new RecorridoEntity(
                 "Centro Histórico de Lima",
                 "Recorre los principales monumentos y plazas del corazón de Lima, Patrimonio de la Humanidad.",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Lima_-_Plaza_Mayor.jpg/1280px-Lima_-_Plaza_Mayor.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/d/d1/Plaza_Mayor_Lima.jpg",
                 3.0
         );
         recorridoDao.insert(r1);
@@ -143,7 +143,7 @@ public abstract class ITANESDatabase extends RoomDatabase {
                         "Plaza Mayor de Lima",
                         "El corazón histórico de Lima. Rodeada por la Catedral, el Palacio de Gobierno y la Municipalidad.",
                         -12.0464, -77.0428, 1,
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Lima_-_Plaza_Mayor.jpg/640px-Lima_-_Plaza_Mayor.jpg"),
+                        "https://upload.wikimedia.org/wikipedia/commons/d/d1/Plaza_Mayor_Lima.jpg"),
 
                 new PuntoTuristicoEntity(idR1,
                         "Catedral de Lima",
