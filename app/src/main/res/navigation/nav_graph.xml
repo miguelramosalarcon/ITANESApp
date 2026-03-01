@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.itanesapp.ui.home.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/recorridoDetailFragment"
+        android:name="com.example.itanesapp.ui.recorrido.RecorridoDetailFragment"
+        android:label="Recorrido">
+        <argument
+            android:name="recorridoId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/puntoDetailFragment"
+        android:name="com.example.itanesapp.ui.punto.PuntoDetailFragment"
+        android:label="Punto Turístico">
+        <argument
+            android:name="puntoId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rutaFragment"
+        android:name="com.example.itanesapp.ui.ruta.RutaFragment"
+        android:label="Ruta" />
+
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.example.itanesapp.ui.favoritos.FavoritosFragment"
+        android:label="Favoritos" />
+
+</navigation>
