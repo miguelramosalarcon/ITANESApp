@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Imagen de portada del recorrido -->
+        <ImageView
+            android:id="@+id/iv_portada"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Overlay oscuro sobre la imagen para legibilidad -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/image_overlay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Nombre del recorrido sobre la imagen -->
+        <TextView
+            android:id="@+id/tv_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/text_on_primary"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_descripcion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Descripción sobre la imagen -->
+        <TextView
+            android:id="@+id/tv_descripcion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/text_on_primary"
+            android:alpha="0.85"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_portada"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Fila de chips informativos -->
+        <LinearLayout
+            android:id="@+id/layout_chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_portada"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Ícono puntos -->
+            <TextView
+                android:id="@+id/tv_puntos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="4dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@color/text_secondary" />
+
+            <!-- Ícono duración -->
+            <TextView
+                android:id="@+id/tv_duracion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="4dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@color/text_secondary"
+                android:gravity="end" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- ============================================================ -->
+    <!-- PALETA PRINCIPAL — ITANES Tourism                            -->
+    <!-- ============================================================ -->
+
+    <!-- Verde primario — naturaleza y aventura -->
+    <color name="green_primary">#1B5E20</color>
+    <color name="green_medium">#2E7D32</color>
+    <color name="green_light">#4CAF50</color>
+
+    <!-- Naranja secundario — acento y llamadas a la acción -->
+    <color name="orange_primary">#E65100</color>
+    <color name="orange_light">#FF8F00</color>
+
+    <!-- Fondos y superficies -->
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F5F5F5</color>
+
+    <!-- Textos -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_secondary">#FFFFFF</color>
+
+    <!-- Estados -->
+    <color name="error">#B00020</color>
+    <color name="favorito_active">#FF8F00</color>
+    <color name="favorito_inactive">#BDBDBD</color>
+
+    <!-- Sombras y divisores -->
+    <color name="divider">#E0E0E0</color>
+    <color name="shadow">#1A000000</color>
+
+    <!-- Overlay semitransparente para imágenes -->
+    <color name="image_overlay">#66000000</color>
+
 </resources>

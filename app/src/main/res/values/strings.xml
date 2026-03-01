@@ -1,3 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ITANESApp</string>
+
+    <!-- App -->
+    <string name="app_name">ITANES</string>
+    <string name="app_slogan">Descubre tu país</string>
+
+    <!-- Home -->
+    <string name="home_title">Recorridos</string>
+    <string name="home_subtitle">Elige tu próxima aventura</string>
+    <string name="home_empty">No hay recorridos disponibles</string>
+    <string name="home_puntos">%d puntos de visita</string>
+    <string name="home_duracion">%.1f horas</string>
+
+    <!-- Recorrido Detail -->
+    <string name="recorrido_iniciar">Iniciar Recorrido</string>
+    <string name="recorrido_puntos_title">Puntos del recorrido</string>
+
+    <!-- Punto Detail -->
+    <string name="punto_anterior">Anterior</string>
+    <string name="punto_siguiente">Siguiente</string>
+    <string name="punto_ver_ruta">Ver Ruta</string>
+    <string name="punto_compartir">Compartir</string>
+    <string name="punto_favorito_agregar">Guardar en favoritos</string>
+    <string name="punto_favorito_quitar">Quitar de favoritos</string>
+    <string name="punto_compartir_mensaje">Te comparto este lugar turístico: %s. Descárgala con ITANES.</string>
+
+    <!-- Favoritos -->
+    <string name="favoritos_title">Mis Favoritos</string>
+    <string name="favoritos_empty_title">Sin favoritos aún</string>
+    <string name="favoritos_empty_subtitle">Guarda los lugares que más te gusten</string>
+    <string name="favoritos_eliminar">Eliminado de favoritos</string>
+    <string name="favoritos_deshacer">Deshacer</string>
+
+    <!-- Ruta -->
+    <string name="ruta_title">Ruta en auto</string>
+    <string name="ruta_distancia">Distancia: %s km</string>
+    <string name="ruta_tiempo">Tiempo estimado: %s min</string>
+    <string name="ruta_abrir_gmaps">Abrir en Google Maps</string>
+    <string name="ruta_cargando">Calculando ruta…</string>
+    <string name="ruta_error">No se pudo calcular la ruta</string>
+
+    <!-- Conectividad -->
+    <string name="sin_conexion">Sin conexión a internet</string>
+    <string name="conectado">Conexión restaurada</string>
+
+    <!-- Accesibilidad -->
+    <string name="cd_foto_lugar">Foto de %s</string>
+    <string name="cd_imagen_recorrido">Imagen del recorrido %s</string>
+    <string name="cd_boton_favorito">Botón favorito</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
