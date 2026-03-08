@@ -23,14 +23,14 @@ public interface RecorridoDao {
     // --------------------------------------------------------
     // INSERT — Inserta un recorrido, ignora si ya existe (mismo id)
     // --------------------------------------------------------
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(RecorridoEntity recorrido);
 
     // --------------------------------------------------------
     // INSERT LISTA — Inserta múltiples recorridos de una vez
     // Útil para el prepoblado inicial de la base de datos
     // --------------------------------------------------------
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<RecorridoEntity> recorridos);
 
     // --------------------------------------------------------
@@ -64,4 +64,7 @@ public interface RecorridoDao {
     // --------------------------------------------------------
     @Query("SELECT COUNT(*) FROM recorridos")
     int getCount();
+
+    @Query("DELETE FROM recorridos")
+    void deleteAll();
 }

@@ -21,13 +21,13 @@ public interface PuntoDao {
     // --------------------------------------------------------
     // INSERT — Inserta un punto turístico
     // --------------------------------------------------------
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(PuntoTuristicoEntity punto);
 
     // --------------------------------------------------------
     // INSERT LISTA — Inserta múltiples puntos de una vez
     // --------------------------------------------------------
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<PuntoTuristicoEntity> puntos);
 
     // --------------------------------------------------------
@@ -68,4 +68,7 @@ public interface PuntoDao {
     // --------------------------------------------------------
     @Query("SELECT * FROM puntos_turisticos WHERE recorrido_id = :recorridoId AND orden = :ordenAnterior")
     LiveData<PuntoTuristicoEntity> getAnterior(int recorridoId, int ordenAnterior);
+
+    @Query("DELETE FROM puntos_turisticos")
+    void deleteAll();
 }

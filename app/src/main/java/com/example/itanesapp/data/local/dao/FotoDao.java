@@ -20,13 +20,13 @@ public interface FotoDao {
     // --------------------------------------------------------
     // INSERT — Inserta una foto
     // --------------------------------------------------------
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(FotoEntity foto);
 
     // --------------------------------------------------------
     // INSERT LISTA — Inserta múltiples fotos de una vez
     // --------------------------------------------------------
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<FotoEntity> fotos);
 
     // --------------------------------------------------------
@@ -48,4 +48,7 @@ public interface FotoDao {
     // --------------------------------------------------------
     @Query("DELETE FROM fotos WHERE punto_id = :puntoId")
     void deleteByPunto(int puntoId);
+
+    @Query("DELETE FROM fotos")
+    void deleteAll();
 }
