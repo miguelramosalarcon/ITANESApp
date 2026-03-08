@@ -1,17 +1,21 @@
 package com.example.itanesapp.ui.splash;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.itanesapp.MainActivity;
 import com.example.itanesapp.databinding.ActivitySplashBinding;
@@ -22,19 +26,21 @@ import com.example.itanesapp.databinding.ActivitySplashBinding;
  * Responsabilidades:
  * 1. Mostrar logo y slogan con animación de entrada
  * 2. Verificar conectividad a internet
- * 3. Redirigir a MainActivity tras 2 segundos
- *
- * Nota: @SuppressLint("CustomSplashScreen") es necesario porque
- * Android 12+ tiene su propio SplashScreen API, pero usamos
- * el nuestro para mayor control visual.
+ * 3. Solicitar permisos de ubicación para OSMDroid
+ * 4. Redirigir a MainActivity tras 2 segundos
  */
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
     private ActivitySplashBinding binding;
 
-    // Tiempo de espera antes de navegar a MainActivity
     private static final int SPLASH_DELAY_MS = 2000;
+    private static final int REQUEST_PERMISSIONS = 100;
+
+    private static final String[] PERMISOS = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +59,12 @@ public class SplashActivity extends AppCompatActivity {
         // Verificar conectividad y mostrar estado
         verificarConectividad();
 
-        // Navegar a MainActivity después del delay
-        new Handler(Looper.getMainLooper()).postDelayed(
-                this::navegarAMain,
-                SPLASH_DELAY_MS
-        );
+        // Solicitar permisos de ubicación para OSMDroid
+        verificarPermisos();
     }
 
     /**
      * Animación fade-in en logo, nombre y slogan.
-     * Da sensación de carga elegante.
      */
     private void iniciarAnimacion() {
         AlphaAnimation fadeIn = new AlphaAnimation(0f, 1f);
@@ -95,29 +97,70 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         if (!hayConexion) {
-            // Mostrar aviso — la app igual funciona con datos locales
-            binding.tvSinConexion.setVisibility(
-                    android.view.View.VISIBLE);
-            binding.progressBar.setVisibility(
-                    android.view.View.GONE);
+            binding.tvSinConexion.setVisibility(android.view.View.VISIBLE);
+            binding.progressBar.setVisibility(android.view.View.GONE);
         }
     }
 
     /**
+     * Verifica permisos de ubicación.
+     * Si ya los tiene → navega después del delay.
+     * Si no → solicita al usuario.
+     */
+    private void verificarPermisos() {
+        boolean tienePermisos = true;
+
+        for (String permiso : PERMISOS) {
+            if (ContextCompat.checkSelfPermission(this, permiso)
+                    != PackageManager.PERMISSION_GRANTED) {
+                tienePermisos = false;
+                break;
+            }
+        }
+
+        if (tienePermisos) {
+            navegarAMainConDelay();
+        } else {
+            ActivityCompat.requestPermissions(this, PERMISOS, REQUEST_PERMISSIONS);
+        }
+    }
+
+    /**
+     * Callback del diálogo de permisos.
+     * Navega igual sin importar si acepta o rechaza —
+     * el mapa funciona sin ubicación, solo no centra en el usuario.
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_PERMISSIONS) {
+            navegarAMainConDelay();
+        }
+    }
+
+    /**
+     * Navega a MainActivity después del delay.
+     */
+    private void navegarAMainConDelay() {
+        new Handler(Looper.getMainLooper()).postDelayed(
+                this::navegarAMain,
+                SPLASH_DELAY_MS
+        );
+    }
+
+    /**
      * Navega a MainActivity y cierra SplashActivity.
-     * finish() evita que el usuario regrese al Splash
-     * con el botón atrás.
      */
     private void navegarAMain() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Limpiar binding para evitar memory leaks
         binding = null;
     }
 }
